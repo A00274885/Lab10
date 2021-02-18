@@ -2,8 +2,7 @@ public class Student extends Person
 {
     String module;
     //Creates a constructor for a student which is based on the Person superclass
-    public Student(String name, String dOB, int age, char gender, String module)
-    {
+    public Student(String name, String dOB, int age, char gender, String module) throws CustomExceptionHandler {
         super(name, dOB, age, gender);
         throw new RuntimeException("Not yet implemented");
     }

@@ -2,8 +2,7 @@ public class Staff extends Person
 {
     String Department;
 
-    public Staff(String name, String dOB,int age,char gender, String department)
-    {
+    public Staff(String name, String dOB,int age,char gender, String department) throws CustomExceptionHandler {
         super(name,dOB,age,gender);
         throw new RuntimeException("Not yet implemented");
     }
