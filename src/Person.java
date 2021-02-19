@@ -72,7 +72,10 @@ public class Person
     //This will print the results of calling the constructor.
     public void printResult()
     {
-        throw new RuntimeException("Not implemented");
+        System.out.println("Name: " + name);
+        System.out.println("DOB: " + dOB);
+        System.out.println("Age: " + age);
+        System.out.println("Gender: " + gender);
     }
 
     static void ValidateName(String name) throws CustomExceptionHandler

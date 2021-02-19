@@ -1,23 +1,56 @@
 public class Student extends Person
 {
-    String module;
+    String module; //What module is the student studying
+    int year; //Current year of study
     //Creates a constructor for a student which is based on the Person superclass
-    public Student(String name, String dOB, int age, char gender, String module) throws CustomExceptionHandler {
+    public Student(String name, String dOB, int age, char gender, String module, int year) throws CustomExceptionHandler
+    {
         super(name, dOB, age, gender);
-        throw new RuntimeException("Not yet implemented");
+
+        this.module = module;
+        this.year = year;
     }
 
     //Getters and setters for the student class
     // * Module
     public String getModule() {
-        throw new RuntimeException("Not implemented");
+        return module;
     }
     public void setModule(String module) {
-        throw new RuntimeException("Not implemented");
+        this.module = module;
+    }
+
+    // * Year
+    public int getYear()
+    {
+        return year;
+    }
+    public void setYear(int year)
+    {
+        this.year = year;
     }
 
     @Override
-    public void printResult() {
-        throw new RuntimeException("Not implemented");
+    public void printResult()
+    {
+        super.printResult();
+        System.out.println("Module: ");
+        System.out.println("Year: ");
+    }
+
+    static void ValidateModule(String module) throws CustomExceptionHandler
+    {
+        if(module == null || module.isBlank())
+            throw new CustomExceptionHandler("Error: module cannot be null");
+
+        if(module.length() < 4)
+            throw new CustomExceptionHandler("Error: module cannot be shorter than 4 letters");
+    }
+
+    static void ValidateYear(int year) throws CustomExceptionHandler
+    {
+        if(year <= 0 || year > 5)
+            throw new CustomExceptionHandler("Error: year must stay within 1 to 5");
+
     }
 }
