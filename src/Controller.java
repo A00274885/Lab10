@@ -21,17 +21,27 @@ public class Controller
         staffArrayList = new ArrayList<>();
     }
 
-    void addToPerson()
+    void addToPerson(Person p)
     {
-
+        personArrayList.add(p);
     }
-    void removeFromPerson()
+    void removeFromPerson(String name)
     {
-
+        for(Person person : personArrayList)
+        {
+            if(person.name.equals(name));
+                personArrayList.remove(person);
+        }
     }
     void printPerson()
     {
+        String text = "";
+        for(Person person : personArrayList)
+        {
+            text = text + person + "\n";
+        }
 
+        System.out.println(text);
     }
 
 

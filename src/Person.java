@@ -70,12 +70,12 @@ public class Person
 
 
     //This will print the results of calling the constructor.
-    public void printResult()
+    public String printResult()
     {
-        System.out.println("Name: " + name);
-        System.out.println("DOB: " + dOB);
-        System.out.println("Age: " + age);
-        System.out.println("Gender: " + gender);
+        String text = "Name: " + name + "\nDOB: " + dOB + "\nAge: "
+                + age +"\nGender: " + gender + "\n";
+
+        return text;
     }
 
     static void ValidateName(String name) throws CustomExceptionHandler

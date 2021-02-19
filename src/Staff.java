@@ -16,7 +16,7 @@ public class Staff extends Person
     }
 
     @Override
-    public void printResult() {
+    public String printResult() {
         throw new RuntimeException("Not implemented");
     }
 
