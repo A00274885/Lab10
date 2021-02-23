@@ -8,7 +8,8 @@ public class ViewGUI extends JFrame
     /*
         This class will be used for the gui and all user interaction, it will also take in some
         raw inputs from the user which will be passed on and handled by the controller class
-         */
+     */
+
     private JButton add = new JButton("Add");
     private JButton remove = new JButton("Remove");
     private JButton print = new JButton("Print");

@@ -53,10 +53,12 @@ public class Controller implements ActionListener, WindowListener
             if (e.getSource() == view.getAdd())
             {
                 addToStudent();
+                ClearInputs();
             }
             else if (e.getSource() == view.getRemove())
             {
                 removeFromStudent();
+                ClearInputs();
             }
             else if(e.getSource() == view.getPrint())
             {
@@ -68,17 +70,19 @@ public class Controller implements ActionListener, WindowListener
             if(e.getSource() == view.getAdd())
             {
                 addToStaff();
+                ClearInputs();
+
             }
             else if (e.getSource() == view.getRemove())
             {
                 removeFromStaff();
+                ClearInputs();
             }
             else if (e.getSource() == view.getPrint())
             {
                 printStaff();
             }
         }
-
     }
 
     private void addToStudent()
@@ -99,6 +103,7 @@ public class Controller implements ActionListener, WindowListener
         }
 
     }
+
     private void removeFromStudent()
     {
         for(Student student : studentArrayList)
@@ -145,30 +150,18 @@ public class Controller implements ActionListener, WindowListener
         System.out.println(text);
     }
 
-    void addToStudent(Student s)
+    void ClearInputs()
     {
-        studentArrayList.add(s);
+        view.getNameField().setText("");
+        view.getDobField().setText("");
+        view.getAgeField().setText("");
+        view.getGenderField().setText("");
+        view.getModuleField().setText("");
+        view.getYearField().setText("");
+        view.getDepartmentField().setText("");
+
     }
 
-    void removeFromStudent(String name)
-    {
-        for(Student student : studentArrayList)
-        {
-            if(student.name.equals(name))
-                studentArrayList.remove(student);
-        }
-    }
-
-    void printStudent()
-    {
-        String text = "";
-        for(Student student : studentArrayList)
-        {
-            text = text + student.printResult() + "\n";
-        }
-        view.getPrintArea().setText(text);
-        System.out.println(text);
-    }
 
 
     @Override
@@ -204,6 +197,31 @@ public class Controller implements ActionListener, WindowListener
     @Override
     public void windowDeactivated(WindowEvent e) {
 
+    }
+
+    void addToStudent(Student s)
+    {
+        studentArrayList.add(s);
+    }
+
+    void removeFromStudent(String name)
+    {
+        for(Student student : studentArrayList)
+        {
+            if(student.name.equals(name))
+                studentArrayList.remove(student);
+        }
+    }
+
+    void printStudent()
+    {
+        String text = "";
+        for(Student student : studentArrayList)
+        {
+            text = text + student.printResult() + "\n";
+        }
+        view.getPrintArea().setText(text);
+        System.out.println(text);
     }
 
     void addToStaff(Staff s)
