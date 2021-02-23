@@ -34,12 +34,10 @@ public class Student extends Person
     @Override
     public String printResult()
     {
-        String text;
-        //Calls the superclasses method and then prints out the additional Module and year info
-        super.printResult();
-        System.out.println("Module: ");
-        System.out.println("Year: ");
-        return text = "";
+        String text = super.printResult() + "Module: " + module
+                + "\nYear: " + year + "\n";
+
+        return text;
     }
 
     static void ValidateModule(String module) throws CustomExceptionHandler

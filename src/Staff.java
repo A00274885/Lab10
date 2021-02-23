@@ -1,27 +1,33 @@
 public class Staff extends Person
 {
-    String Department;
+    String department;
 
 
     public Staff(String name, String dOB,int age,char gender, String department) throws CustomExceptionHandler {
         super(name,dOB,age,gender);
-        throw new RuntimeException("Not yet implemented");
+
+        ValidateDepartment(department);
+
+        this.department = department;
     }
 
     public String getDepartment() {
-        throw new RuntimeException("Not implemented");
+        return department;
     }
     public void setDepartment(String department) {
-        throw new RuntimeException("Not implemented");
+        this.department = department;
     }
 
     @Override
     public String printResult() {
-        throw new RuntimeException("Not implemented");
+        String text = super.printResult() + "Department: " + department + "\n";
+
+        return text;
     }
 
-    static void ValidateDepartment(String department)
+    static void ValidateDepartment(String department) throws CustomExceptionHandler
     {
-        throw new RuntimeException("Not implemented");
+        if(department.isBlank() || department.isEmpty())
+            throw new CustomExceptionHandler("Error: Department cannot be empty");
     }
 }
